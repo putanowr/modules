@@ -1,0 +1,21 @@
+#%Module1.0#####################################################################
+##
+## CGM mdoulefile
+##
+##
+proc ModulesHelp { } {
+	global cgmversion
+
+	puts stderr "\tSets varialbes for CGM library
+	puts stderr "\n\tSets LD_LIBRARY_PATH"
+        puts stderr "\n\tSets CPUS_INCLUDE_PATH
+	puts stderr "\n\tVersion $cgmversion\n"
+}
+
+module-whatis	"enable use of CGM library"
+
+# for Tcl script use only
+set	cgmversion	15.0
+
+append-path	LD_LIBRARY_PATH    /mnt/scpae/install/packages/cgm/15.0/lib
+append-path     CPLUS_INCLUDE_PATH /mnt/space/install/packages/cgm/15.0/include

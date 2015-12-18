@@ -1,0 +1,23 @@
+#%Module1.0#####################################################################
+##
+## TochnogLib mdoulefile
+##
+##
+proc ModulesHelp { } {
+	global tochnoglibversion
+
+	puts stderr "\tSets varialbes TochnogLib MOAB library
+        puts stderr "\n\tSets PATH"
+	puts stderr "\n\tSets LD_LIBRARY_PATH"
+        puts stderr "\n\tSets CPUS_INCLUDE_PATH
+	puts stderr "\n\tVersion $tochnoglibversion\n"
+}
+
+module-whatis	"set environment for TochnogLib library"
+
+# for Tcl script use only
+set	tochnoglibversion      0.5.0	
+
+append-path     PATH               /mnt/space/install/packages/tochnoglib/0.5.0/bin
+append-path	LD_LIBRARY_PATH    /mnt/scpae/install/packages/tochnoglib/0.5.0/lib
+append-path     CPLUS_INCLUDE_PATH /mnt/space/install/packages/tochnoglib/0.5.0/include
