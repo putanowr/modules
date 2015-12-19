@@ -1,0 +1,7 @@
+#%Module1.0
+
+if [info exists env(TOCHNOGLIB_DEFAULT) ] {
+  set ModulesVersion $env(TOCHNOGLIB_DEFAULT)
+} else {
+  set ModulesVersion "0.5.0"
+}

@@ -6,7 +6,7 @@
 proc ModulesHelp { } {
 	global tochnoglibversion
 
-	puts stderr "\tSets varialbes TochnogLib MOAB library
+	puts stderr "\tSets varialbes for TochnogLib library
         puts stderr "\n\tSets PATH"
 	puts stderr "\n\tSets LD_LIBRARY_PATH"
         puts stderr "\n\tSets CPUS_INCLUDE_PATH
