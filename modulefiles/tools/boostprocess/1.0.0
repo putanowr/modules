@@ -1,0 +1,19 @@
+#%Module1.0#####################################################################
+##
+## Boost.Process mdoulefile
+##
+##
+proc ModulesHelp { } {
+	global boostprocessversion
+
+	puts stderr "\tSets varialbes for Boost.Process library
+        puts stderr "\n\tSets CPUS_INCLUDE_PATH
+	puts stderr "\n\tVersion $boostprocessversion\n"
+}
+
+module-whatis	"set environment for Boost.Process library"
+
+# for Tcl script use only
+set	boostprocessversion      1.0.0
+
+append-path     CPLUS_INCLUDE_PATH /mnt/space/install/packages/boostprocess/1.0.0/include
