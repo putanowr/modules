@@ -18,6 +18,12 @@ module-whatis	"set environment for TochnogLib library"
 # for Tcl script use only
 set	tochnoglibversion      0.5.0	
 
-append-path     PATH               /mnt/space/install/packages/tochnoglib/0.5.0/bin
-append-path	LD_LIBRARY_PATH    /mnt/scpae/install/packages/tochnoglib/0.5.0/lib
-append-path     CPLUS_INCLUDE_PATH /mnt/space/install/packages/tochnoglib/0.5.0/include
+if [info exists env(BASE_DIR) ] {
+  set BaseDir $env(BASE_DIR)
+} else {
+  set BaseDir "/mnt/space/install"
+}
+
+append-path     PATH               "$BaseDir/packages/tochnoglib/0.5.0/bin"
+append-path	LD_LIBRARY_PATH    "$BaseDir/packages/tochnoglib/0.5.0/lib"
+append-path     CPLUS_INCLUDE_PATH "$BaseDir/packages/tochnoglib/0.5.0/include"
