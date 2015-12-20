@@ -6,8 +6,8 @@
 proc ModulesHelp { } {
 	global boostprocessversion
 
-	puts stderr "\tSets varialbes for Boost.Process library
-        puts stderr "\n\tSets CPUS_INCLUDE_PATH
+	puts stderr "\tSets varialbes for Boost.Process library"
+        puts stderr "\n\tSets CPUS_INCLUDE_PATH"
 	puts stderr "\n\tVersion $boostprocessversion\n"
 }
 
