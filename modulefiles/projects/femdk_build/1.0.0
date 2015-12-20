@@ -1,0 +1,19 @@
+#%Module1.0
+#####################################################################
+##
+## Module for building FEMDK
+##
+##
+proc ModulesHelp { } {
+	global femdkbuildversion
+
+	puts stderr "\tLoads modules for building FEMDK"
+	puts stderr "\n\tVersion $femdkversion\n"
+}
+
+module-whatis	"load modules for building FEMDK"
+
+# for Tcl script use only
+set	femdkbuildversion	1.0.0
+
+module load boostproject moab
