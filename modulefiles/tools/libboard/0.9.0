@@ -1,0 +1,28 @@
+#%Module1.0#####################################################################
+##
+## LibBoard modulefile
+##
+##
+proc ModulesHelp { } {
+	global libboardversion
+
+	puts stderr "\tSets varialbes for Board library"
+        puts stderr "\n\tSets PATH"
+	puts stderr "\n\tSets LD_LIBRARY_PATH"
+        puts stderr "\n\tSets CPUS_INCLUDE_PATH"
+	puts stderr "\n\tVersion $libboardversion\n"
+}
+
+module-whatis	"set environment for Board library"
+
+# for Tcl script use only
+set	libboardversion      0.9.0 
+
+if [info exists env(BASE_DIR) ] {
+  set BaseDir $env(BASE_DIR)
+} else {
+  set BaseDir "/mnt/space/install"
+}
+
+append-path	LD_LIBRARY_PATH    "$BaseDir/packages/libboard/0.9.0/lib"
+append-path     CPLUS_INCLUDE_PATH "$BaseDir/packages/libboard/0.9.0/include"

@@ -1,0 +1,7 @@
+#%Module1.0
+
+if [info exists env(LIBBOARD_DEFAULT) ] {
+  set ModulesVersion $env(LIBBOARD_DEFAULT)
+} else {
+  set ModulesVersion "0.9.0"
+}
