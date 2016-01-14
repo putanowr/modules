@@ -1,0 +1,7 @@
+#%Module1.0
+
+if [info exists env(ARABICA_DEFAULT) ] {
+  set ModulesVersion $env(ARABICA_DEFAULT)
+} else {
+  set ModulesVersion "2.0.15"
+}

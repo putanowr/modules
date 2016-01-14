@@ -1,0 +1,28 @@
+#%Module1.0#####################################################################
+##
+## Arabica modulefile
+##
+##
+proc ModulesHelp { } {
+	global arabicaversion
+
+	puts stderr "\tSets varialbes for Arabica library"
+        puts stderr "\n\tSets PATH"
+	puts stderr "\n\tSets LD_LIBRARY_PATH"
+        puts stderr "\n\tSets CPUS_INCLUDE_PATH"
+	puts stderr "\n\tVersion $arabicaversion\n"
+}
+
+module-whatis	"set environment for Arabica library"
+
+# for Tcl script use only
+set	arabicaversion      2.0.15
+
+if [info exists env(BASE_DIR) ] {
+  set BaseDir $env(BASE_DIR)
+} else {
+  set BaseDir "/mnt/space/install"
+}
+
+append-path	LD_LIBRARY_PATH    "$BaseDir/packages/arabica/2.0.15/lib"
+append-path     CPLUS_INCLUDE_PATH "$BaseDir/packages/arabica/2.0.15/include"
