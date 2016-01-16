@@ -16,4 +16,4 @@ module-whatis	"load modules for building FEMDK"
 # for Tcl script use only
 set	femdkbuildversion	1.0.0
 
-module load arabica boostprocess libboard moab teng
+module load arabica boostprocess libboard moab muparser teng
