@@ -1,0 +1,28 @@
+#%Module1.0#####################################################################
+##
+## MuParser modulefile
+##
+##
+proc ModulesHelp { } {
+	global muparserversion
+
+	puts stderr "\tSets varialbes for MuParser library"
+        puts stderr "\n\tSets PATH"
+	puts stderr "\n\tSets LD_LIBRARY_PATH"
+        puts stderr "\n\tSets CPUS_INCLUDE_PATH"
+	puts stderr "\n\tVersion $muparserversion\n"
+}
+
+module-whatis	"set environment for MuParser library"
+
+# for Tcl script use only
+set	muparserversion      2.2.5
+
+if [info exists env(BASE_DIR) ] {
+  set BaseDir $env(BASE_DIR)
+} else {
+  set BaseDir "/mnt/space/install"
+}
+
+append-path	LD_LIBRARY_PATH    "$BaseDir/packages/muparser/2.2.5/lib"
+append-path     CPLUS_INCLUDE_PATH "$BaseDir/packages/muparser/2.2.5/include"

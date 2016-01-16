@@ -1,0 +1,7 @@
+#%Module1.0
+
+if [info exists env(MUPARSER_DEFAULT) ] {
+  set ModulesVersion $env(MUPARSER_DEFAULT)
+} else {
+  set ModulesVersion "2.2.5"
+}
