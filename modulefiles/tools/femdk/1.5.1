@@ -1,0 +1,30 @@
+#%Module1.0#####################################################################
+##
+## FEMDK modulefile
+##
+##
+proc ModulesHelp { } {
+	global femdkversion
+
+	puts stderr "\tSets varialbes for FEMDK library"
+        puts stderr "\n\tSets PATH"
+	puts stderr "\n\tSets LD_LIBRARY_PATH"
+        puts stderr "\n\tSets CPUS_INCLUDE_PATH"
+	puts stderr "\n\tVersion $femdkversion\n"
+}
+
+module-whatis	"set environment for FEMDK library"
+
+# for Tcl script use only
+set	femdkversion      1.5.1
+
+if [info exists env(BASE_DIR) ] {
+  set BaseDir $env(BASE_DIR)
+} else {
+  set BaseDir "/mnt/space/install"
+}
+
+prepend-path   LD_LIBRARY_PATH         "$BaseDir/packages/femdk/1.5.1/lib"
+prepend-path   CPLUS_INCLUDE_PATH      "$BaseDir/packages/femdk/1.5.1/include"
+prepend-path   FEMDK_OPTIONS_DEF_DIR   "$BaseDir/packages/femdk/1.5.1/share/femdk/options_def"
+prepend-path   FEMDK_CMAKE_MODULES_DIR "$BaseDir/packages/femdk/1.5.1/share/femdk/cmake_modules"

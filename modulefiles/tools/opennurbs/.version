@@ -1,0 +1,7 @@
+#%Module1.0
+
+if [info exists env(OPENNURBS_DEFAULT) ] {
+  set ModulesVersion $env(OPENNURBS_DEFAULT)
+} else {
+  set ModulesVersion "5.0.0"
+}

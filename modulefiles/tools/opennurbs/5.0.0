@@ -1,0 +1,28 @@
+#%Module1.0#####################################################################
+##
+## openNURBS modulefile
+##
+##
+proc ModulesHelp { } {
+	global opennurbsversion
+
+	puts stderr "\tSets varialbes for openNURBS library"
+        puts stderr "\n\tSets PATH"
+	puts stderr "\n\tSets LD_LIBRARY_PATH"
+        puts stderr "\n\tSets CPUS_INCLUDE_PATH"
+	puts stderr "\n\tVersion $opennurbsversion\n"
+}
+
+module-whatis	"set environment for openNURBS library"
+
+# for Tcl script use only
+set	opennurbsversion      5.0.0
+
+if [info exists env(BASE_DIR) ] {
+  set BaseDir $env(BASE_DIR)
+} else {
+  set BaseDir "/mnt/space/install"
+}
+
+prepend-path     LD_LIBRARY_PATH    "$BaseDir/packages/openNURBS/5.0.0/lib"
+prepend-path     CPLUS_INCLUDE_PATH "$BaseDir/packages/openNURBS/5.0.0/include"
