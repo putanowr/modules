@@ -24,5 +24,5 @@ if [info exists env(BASE_DIR) ] {
   set BaseDir "/mnt/space/install"
 }
 
-append-path	LD_LIBRARY_PATH    "$BaseDir/packages/muparser/2.2.5/lib"
-append-path     CPLUS_INCLUDE_PATH "$BaseDir/packages/muparser/2.2.5/include"
+prepend-path     LD_LIBRARY_PATH    "$BaseDir/packages/muparser/2.2.5/lib"
+prepend-path     CPLUS_INCLUDE_PATH "$BaseDir/packages/muparser/2.2.5/include"

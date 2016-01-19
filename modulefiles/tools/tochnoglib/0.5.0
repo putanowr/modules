@@ -24,6 +24,6 @@ if [info exists env(BASE_DIR) ] {
   set BaseDir "/mnt/space/install"
 }
 
-append-path     PATH               "$BaseDir/packages/tochnoglib/0.5.0/bin"
-append-path	LD_LIBRARY_PATH    "$BaseDir/packages/tochnoglib/0.5.0/lib"
-append-path     CPLUS_INCLUDE_PATH "$BaseDir/packages/tochnoglib/0.5.0/include"
+prepend-path    PATH               "$BaseDir/packages/tochnoglib/0.5.0/bin"
+prepend-path    LD_LIBRARY_PATH    "$BaseDir/packages/tochnoglib/0.5.0/lib"
+prepend-path    CPLUS_INCLUDE_PATH "$BaseDir/packages/tochnoglib/0.5.0/include"
