@@ -7,9 +7,7 @@ proc ModulesHelp { } {
 	global mkcxxmoduleversion
 
 	puts stderr "\tSets varialbes for mkcxxmodule"
-        puts stderr "\n\tSets PATH"
-	puts stderr "\n\tSets LD_LIBRARY_PATH"
-        puts stderr "\n\tSets CPUS_INCLUDE_PATH"
+  puts stderr "\n\tSets PATH"
 	puts stderr "\n\tVersion $mkcxxmoduleversion\n"
 }
 
@@ -24,5 +22,5 @@ if [info exists env(BASE_DIR) ] {
   set BaseDir "/mnt/space/install"
 }
 
-prepend-path    LD_LIBRARY_PATH    "$BaseDir/packages/mkcxxmodule/0.6.0/lib"
-prepend-path    CPLUS_INCLUDE_PATH "$BaseDir/packages/mkcxxmodule/0.6.0/include"
+prepend-path    PYTHONPATH "$BaseDir/packages/mkcxxmodule/0.6.0/lib/python-2.7/site-package"
+append-path  PATH "$BaseDir/packages/mkcxxmodule/0.6.0/bin"
