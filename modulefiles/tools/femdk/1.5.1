@@ -24,6 +24,7 @@ if [info exists env(BASE_DIR) ] {
   set BaseDir "/mnt/space/install"
 }
 
+setenv         FEMDK_DIR               "$BaseDir/packages/femdk/1.5.1"
 prepend-path   LD_LIBRARY_PATH         "$BaseDir/packages/femdk/1.5.1/lib"
 prepend-path   CPLUS_INCLUDE_PATH      "$BaseDir/packages/femdk/1.5.1/include"
 prepend-path   FEMDK_OPTIONS_DEF_DIR   "$BaseDir/packages/femdk/1.5.1/share/femdk/options_def"
