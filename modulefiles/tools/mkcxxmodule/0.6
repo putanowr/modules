@@ -1,0 +1,29 @@
+#%Module1.0#####################################################################
+##
+## mkcxxmodule modulefile
+##
+##
+proc ModulesHelp { } {
+	global mkcxxmoduleversion
+
+	puts stderr "\tSets varialbes for mkcxxmodule"
+  puts stderr "\n\tSets PATH"
+	puts stderr "\n\tVersion $mkcxxmoduleversion\n"
+}
+
+module-whatis	"set environment for mkcxxmodule"
+
+# for Tcl script use only
+set	mkcxxmoduleversion      0.6
+
+if [info exists env(BASE_DIR) ] {
+  set BaseDir $env(BASE_DIR)
+} else {
+  set BaseDir "/mnt/space/install"
+}
+
+# local variable to shoten the paths
+set basepath "$BaseDir/packages/mkcxxmodule/$mkcxxmoduleversion"
+
+prepend-path    PYTHONPATH "$basepath/lib/python-2.7/site-package"
+append-path     PATH       "$basepath/bin"
