@@ -1,0 +1,28 @@
+#%Module1.0#####################################################################
+##
+## Anaconda3 modulefile
+##
+##
+proc ModulesHelp { } {
+	global anaconda3version
+
+	puts stderr "\tSets varialbes for Anaconda3 Python environment"
+        puts stderr "\n\tSets PATH"
+	puts stderr "\n\tVersion $anaconda3version\n"
+}
+
+module-whatis	"set environment for Anaconda3 library"
+
+# for Tcl script use only
+set	anaconda3version      2.5
+
+if [info exists env(BASE_DIR) ] {
+  set BaseDir $env(BASE_DIR)
+} else {
+  set BaseDir "/mnt/space/install"
+}
+
+# local variable to shoten the paths
+set basepath "$BaseDir/packages/anaconda3/$anaconda3version"
+
+prepend-path    PATH             "$basepath/bin"
