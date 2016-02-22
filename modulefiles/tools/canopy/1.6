@@ -1,0 +1,30 @@
+#%Module1.0#####################################################################
+##
+## Canopy modulefile
+##
+##
+proc ModulesHelp { } {
+	global canopyversion
+
+	puts stderr "\tSets varialbes for Canopy Python environment"
+        puts stderr "\n\tSets PATH"
+	puts stderr "\n\tVersion $canopyversion\n"
+}
+
+module-whatis	"set environment for Canopy library"
+
+# for Tcl script use only
+set	canopyversion      1.6
+
+if [info exists env(BASE_DIR) ] {
+  set BaseDir $env(BASE_DIR)
+} else {
+  set BaseDir "/mnt/space/install"
+}
+
+# local variable to shoten the paths
+set basepath "$BaseDir/packages/canopy/$canopyversion"
+
+prepend-path    PATH             /mnt/space/install/Canopy64/Usr/bin
+prepend-path    PATH             "$basepath"
+set-alias activate_canopy "source '/mnt/space/install/Canopy64/User/bin/activate'"
