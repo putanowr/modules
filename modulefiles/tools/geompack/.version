@@ -1,0 +1,7 @@
+#%Module1.0
+
+if [info exists env(GEOMPACK_DEFAULT) ] {
+  set ModulesVersion $env(GEOMPACK_DEFAULT)
+} else {
+  set ModulesVersion "14.08"
+}

@@ -1,0 +1,28 @@
+#%Module1.0#####################################################################
+##
+## Geompack++ modulefile
+##
+##
+proc ModulesHelp { } {
+	global geompackversion
+
+	puts stderr "\tSets varialbes for Geompack++ mesh generator"
+        puts stderr "\n\tSets PATH"
+	puts stderr "\n\tVersion $geompackversion\n"
+}
+
+module-whatis	"set environment for Geompack++ mesh generator"
+
+# for Tcl script use only
+set	geompackversion      14.08
+
+if [info exists env(BASE_DIR) ] {
+  set BaseDir $env(BASE_DIR)
+} else {
+  set BaseDir "/mnt/space/install"
+}
+
+# local variable to shoten the paths
+set basepath "$BaseDir/packages/geompack/$geompackversion"
+
+prepend-path    PATH             "$basepath/bin"
