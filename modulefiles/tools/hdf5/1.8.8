@@ -1,0 +1,30 @@
+#%Module1.0#####################################################################
+##
+## HDF5 modulefile
+##
+##
+proc ModulesHelp { } {
+	global hdf5version
+
+	puts stderr "\tSets varialbes for HDF5 library"
+        puts stderr "\n\tSets PATH"
+	puts stderr "\n\tVersion $hdf5version\n"
+}
+
+module-whatis	"set environment for HDF5 library"
+
+# for Tcl script use only
+set	hdf5version      1.8.8
+
+if [info exists env(BASE_DIR) ] {
+  set BaseDir $env(BASE_DIR)
+} else {
+  set BaseDir "/mnt/space/install"
+}
+
+# local variable to shoten the paths
+set basepath "$BaseDir/packages/hdf5/$hdf5version"
+
+prepend-path    PATH                "$basepath/bin"
+prepend-path    LD_LIBRARY_PATH     "$basepath/lib"
+prepend-path    CPLUS_INCLUDE_PATH  "$basepath/include"
