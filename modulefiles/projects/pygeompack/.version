@@ -1,0 +1,7 @@
+#%Module1.0
+
+if [info exists env(PYGEOMPACK_DEFAULT) ] {
+  set ModulesVersion $env(PYGEOMPACK_DEFAULT)
+} else {
+  set ModulesVersion "1.0"
+}
