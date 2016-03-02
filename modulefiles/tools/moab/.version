@@ -3,5 +3,5 @@
 if [info exists env(MOAB_DEFAULT) ] {
   set ModulesVersion $env(MOAB_DEFAULT)
 } else {
-  set ModulesVersion "4.9.0"
+  set ModulesVersion "4.9"
 }
