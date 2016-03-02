@@ -15,7 +15,7 @@ proc ModulesHelp { } {
 module-whatis	"set environment for MOAB library"
 
 # for Tcl script use only
-set	moabversion	4.9.0
+set	moabversion	4.9
 
 if [info exists env(BASE_DIR) ] {
   set BaseDir $env(BASE_DIR)
@@ -23,5 +23,5 @@ if [info exists env(BASE_DIR) ] {
   set BaseDir "/mnt/space/install"
 }
 
-prepend-path     LD_LIBRARY_PATH    "$BaseDir/packages/moab/4.9.0/lib"
-prepend-path     CPLUS_INCLUDE_PATH "$BaseDir/packages/moab/4.9.0/include"
+prepend-path     LD_LIBRARY_PATH    "$BaseDir/packages/moab/4.9/lib"
+prepend-path     CPLUS_INCLUDE_PATH "$BaseDir/packages/moab/4.9/include"
