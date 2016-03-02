@@ -1,0 +1,31 @@
+#%Module1.0#####################################################################
+##
+## NetCDF modulefile
+##
+##
+proc ModulesHelp { } {
+	global netcdfversion
+
+	puts stderr "\tSets varialbes for NetCDF library"
+        puts stderr "\n\tSets PATH"
+	puts stderr "\n\tVersion $netcdfversion\n"
+}
+
+module-whatis	"set environment for NetCDF library"
+
+# for Tcl script use only
+set	netcdfversion      4.3.3.1
+
+if [info exists env(BASE_DIR) ] {
+  set BaseDir $env(BASE_DIR)
+} else {
+  set BaseDir "/mnt/space/install"
+}
+
+# local variable to shoten the paths
+set basepath "$BaseDir/packages/netcdf/$netcdfversion"
+
+prepend-path    PATH                "$basepath/bin"
+prepend-path    LD_LIBRARY_PATH     "$basepath/lib"
+prepend-path    CPLUS_INCLUDE_PATH  "$basepath/include"
+setenv          NETCDF_VERSION        "$netcdfversion"
