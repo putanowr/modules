@@ -1,0 +1,33 @@
+#%Module1.0
+#####################################################################
+##
+## Module for PyTAPS software suite
+##
+##
+proc ModulesHelp { } {
+	global pytaps
+
+	puts stderr "\tLoads modules for PyTAPS"
+	puts stderr "\n\tVersion $pytapsversion\n"
+}
+
+module-whatis	"load modules for PyTAPS"
+
+# for Tcl script use only
+set	pytapsversion	1.3
+
+
+if [info exists env(BASE_DIR) ] {
+  set BaseDir $env(BASE_DIR)
+} else {
+  set BaseDir "/mnt/space/install"
+}
+
+# local variable to shorten the paths
+set basepath "$BaseDir/packages/pytaps/$pytapsversion"
+
+module load module load hdf5 netcdf cgm moab  
+
+prepend-path      PATH          "$basepath/bin"
+
+system venvpytaps
