@@ -26,8 +26,6 @@ if [info exists env(BASE_DIR) ] {
 # local variable to shorten the paths
 set basepath "$BaseDir/packages/pytaps/$pytapsversion"
 
-module load module load hdf5 netcdf cgm moab  
+module load hdf5 netcdf cgm moab  
 
 prepend-path      PATH          "$basepath/bin"
-
-system venvpytaps
