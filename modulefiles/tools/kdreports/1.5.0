@@ -1,0 +1,28 @@
+#%Module1.0#####################################################################
+##
+## KDReports modulefile
+##
+##
+proc ModulesHelp { } {
+	global kdreportsversion
+
+	puts stderr "\tSets varialbes for KDReports library"
+        puts stderr "\n\tSets PATH"
+	puts stderr "\n\tSets LD_LIBRARY_PATH"
+        puts stderr "\n\tSets CPUS_INCLUDE_PATH"
+	puts stderr "\n\tVersion $kdreportsversion\n"
+}
+
+module-whatis	"set environment for KDReports library"
+
+# for Tcl script use only
+set	kdreportsversion      1.5.0
+
+if [info exists env(BASE_DIR) ] {
+  set BaseDir $env(BASE_DIR)
+} else {
+  set BaseDir "/mnt/space/install"
+}
+
+prepend-path     LD_LIBRARY_PATH    "$BaseDir/packages/kdchart/1.5.0/lib"
+prepend-path     CPLUS_INCLUDE_PATH "$BaseDir/packages/kdchart/1.5.0/include"
