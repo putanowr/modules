@@ -3,5 +3,5 @@
 if [info exists env(ARMADILLO_DEFAULT) ] {
   set ModulesVersion $env(ARMADILLO_DEFAULT)
 } else {
-  set ModulesVersion "6.400.3"
+  set ModulesVersion "7.200.2"
 }
