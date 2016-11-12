@@ -3,5 +3,5 @@
 if [info exists env(KDCHART_DEFAULT) ] {
   set ModulesVersion $env(KDCHART_DEFAULT)
 } else {
-  set ModulesVersion "2.5.1"
+  set ModulesVersion "2.6.0"
 }
