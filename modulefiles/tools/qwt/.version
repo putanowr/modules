@@ -1,0 +1,7 @@
+#%Module1.0
+
+if [info exists env(QWT_DEFAULT) ] {
+  set ModulesVersion $env(QWT_DEFAULT)
+} else {
+  set ModulesVersion "6.1.3"
+}
