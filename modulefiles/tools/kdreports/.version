@@ -3,5 +3,5 @@
 if [info exists env(KDREPORTS_DEFAULT) ] {
   set ModulesVersion $env(KDREPORTS_DEFAULT)
 } else {
-  set ModulesVersion "1.5.0"
+  set ModulesVersion "1.7.1"
 }
