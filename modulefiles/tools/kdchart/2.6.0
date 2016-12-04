@@ -24,7 +24,7 @@ if [info exists env(BASE_DIR) ] {
   set BaseDir "/mnt/space/install"
 }
 
-setenv           KDCHARTVERSION     "$kdchartversion"
-setenv           KDCHARTDIR         "$BaseDir/packages/kdchart/$kdchartversion/"
+setenv           KDCHart_VERSION     "$kdchartversion"
+setenv           KDChart_DIR         "$BaseDir/packages/kdchart/$kdchartversion/"
 prepend-path     LD_LIBRARY_PATH    "$BaseDir/packages/kdchart/$kdchartversion/lib"
 prepend-path     CPLUS_INCLUDE_PATH "$BaseDir/packages/kdchart/$kdchartversion/include"
