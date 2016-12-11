@@ -1,0 +1,31 @@
+#%Module1.0#####################################################################
+##
+## Cereal modulefile
+## Cereal is C++ header only serialization library
+##
+##
+proc ModulesHelp { } {
+	global cerealversion
+	puts stderr "\tSets varialbes for Cereal library"
+        puts stderr "\n\tSets PATH"
+	puts stderr "\n\tSets LD_LIBRARY_PATH"
+        puts stderr "\n\tSets CPLUS_INCLUDE_PATH"
+	puts stderr "\n\tVersion $cerealversion\n"
+}
+
+module-whatis	"set environment for Cereal library (C++ serialization)"
+
+# for Tcl script use only
+set	cerealversion      1.2.1
+
+if [info exists env(BASE_DIR) ] {
+  set BaseDir $env(BASE_DIR)
+} else {
+  set BaseDir "/mnt/space/install"
+}
+
+
+setenv           CEREAL_VERSION     "$cerealversion"
+setenv           CEREAL_DIR         "$BaseDir/packages/cereal/$cerealversion/"
+prepend-path     LD_LIBRARY_PATH    "$BaseDir/packages/cereal/$cerealversion/lib"
+prepend-path     CPLUS_INCLUDE_PATH "$BaseDir/packages/cereal/$cerealversion/include"
