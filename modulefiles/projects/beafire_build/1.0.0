@@ -1,0 +1,19 @@
+#%Module1.0
+#####################################################################
+##
+## Module for building Beafire 
+##
+##
+proc ModulesHelp { } {
+	global beafirebuildversion
+
+	puts stderr "\tLoads modules for building Beafire"
+	puts stderr "\n\tVersion $beafireversion\n"
+}
+
+module-whatis	"load modules for building Beafire"
+
+# for Tcl script use only
+set	beafirebuildversion	1.0.0
+
+module load cmake armadillo qwt cereal 
