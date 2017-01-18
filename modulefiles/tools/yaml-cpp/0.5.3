@@ -1,0 +1,32 @@
+#%Module1.0#####################################################################
+##
+## yaml-cpp modulefile
+## yaml-cpp is C++ library for handling YAML format 
+##
+##
+proc ModulesHelp { } {
+	global yamlcppversion
+	puts stderr "\tSets varialbes for yaml-cpp library"
+        puts stderr "\n\tSets PATH"
+	puts stderr "\n\tSets LD_LIBRARY_PATH"
+        puts stderr "\n\tSets CPLUS_INCLUDE_PATH"
+	puts stderr "\n\tVersion $yamlcppversion\n"
+}
+
+module-whatis	"set environment for yaml-cpp library (C++ YAML)"
+
+# for Tcl script use only
+set	yamlcppversion      0.5.3
+
+if [info exists env(BASE_DIR) ] {
+  set BaseDir $env(BASE_DIR)
+} else {
+  set BaseDir "/mnt/space/install"
+}
+
+
+setenv           YAML_CPP_VERSION   "$yamlcppversion"
+setenv           YAML_CPP_DIR       "$BaseDir/packages/yaml-cpp/$yamlcppversion/"
+setenv           YAML_CMAKE         "$BaseDir/packages/yaml-cpp/$yamlcppversion/lib/cmake"
+prepend-path     LD_LIBRARY_PATH    "$BaseDir/packages/yamlcpp/$yamlcppversion/lib"
+prepend-path     CPLUS_INCLUDE_PATH "$BaseDir/packages/yamlcpp/$yamlcppversion/include"

@@ -16,4 +16,5 @@ module-whatis	"load modules for building IGA"
 # for Tcl script use only
 set	igabuildversion	1.0.0
 
-module load cmake armadillo boostprocess femdk getfem libboard moab muparser opennurbs 
+module load cmake armadillo boostprocess \
+femdk getfem libboard moab muparser opennurbs yaml-cpp

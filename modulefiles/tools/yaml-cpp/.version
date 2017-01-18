@@ -1,0 +1,7 @@
+#%Module1.0
+
+if [info exists env(YAML_CPP_DEFAULT) ] {
+  set ModulesVersion $env(YAML_CPP_DEFAULT)
+} else {
+  set ModulesVersion "0.5.3"
+}
