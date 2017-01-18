@@ -27,6 +27,6 @@ if [info exists env(BASE_DIR) ] {
 
 setenv           YAML_CPP_VERSION   "$yamlcppversion"
 setenv           YAML_CPP_DIR       "$BaseDir/packages/yaml-cpp/$yamlcppversion/"
-setenv           YAML_CMAKE         "$BaseDir/packages/yaml-cpp/$yamlcppversion/lib/cmake"
-prepend-path     LD_LIBRARY_PATH    "$BaseDir/packages/yamlcpp/$yamlcppversion/lib"
-prepend-path     CPLUS_INCLUDE_PATH "$BaseDir/packages/yamlcpp/$yamlcppversion/include"
+setenv           YAML_CMAKE         "$BaseDir/packages/yaml-cpp/$yamlcppversion/lib/cmake/yaml-cpp"
+prepend-path     LD_LIBRARY_PATH    "$BaseDir/packages/yaml-cpp/$yamlcppversion/lib"
+prepend-path     CPLUS_INCLUDE_PATH "$BaseDir/packages/yaml-cpp/$yamlcppversion/include"
