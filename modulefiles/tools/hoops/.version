@@ -1,0 +1,7 @@
+#%Module1.0
+
+if [info exists env(HOOPS_DEFAULT) ] {
+  set ModulesVersion $env(HOOPS_DEFAULT)
+} else {
+  set ModulesVersion "19.10"
+}

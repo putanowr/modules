@@ -1,0 +1,32 @@
+#%Module1.0#####################################################################
+##
+## HOOPS modulefile
+## HOOPS is C++ computer graphics and visualisation library 
+##
+##
+proc ModulesHelp { } {
+	global hoopsversion
+	puts stderr "\tSets varialbes for HOOPS library"
+        puts stderr "\n\tSets PATH"
+	puts stderr "\n\tSets LD_LIBRARY_PATH"
+        puts stderr "\n\tSets CPLUS_INCLUDE_PATH"
+	puts stderr "\n\tVersion $hoopsersion\n"
+}
+
+module-whatis	"set environment for HOOPS library"
+
+# for Tcl script use only
+set	hoopsversion      21.12
+
+if [info exists env(BASE_DIR) ] {
+  set BaseDir $env(BASE_DIR)
+} else {
+  set BaseDir "/mnt/space/install"
+}
+
+
+setenv           HOOPS_VERSION       "$hoopsversion"
+prepend-path     LD_LIBRARY_PATH     "$BaseDir/packages/hoops/$hoopsversion/lib"
+prepend-path     CPLUS_INCLUDE_PATH  "$BaseDir/packages/hoops/$hoopsversion/include/hoops_3dgs"
+prepend-path     CPLUS_INCLUDE_PATH  "$BaseDir/packages/hoops/$hoopsversion/include/hoops_mvo"
+prepend-path     CPLUS_INCLUDE_PATH  "$BaseDir/packages/hoops/$hoopsversion/include/utility"

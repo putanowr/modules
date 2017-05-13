@@ -1,0 +1,20 @@
+#%Module1.0
+#####################################################################
+##
+## Module for building IGA
+##
+##
+proc ModulesHelp { } {
+	global igabuildversion
+
+	puts stderr "\tLoads modules for building IGA"
+	puts stderr "\n\tVersion $igaversion\n"
+}
+
+module-whatis	"load modules for building IGA"
+
+# for Tcl script use only
+set	igabuildversion	1.0.0
+
+module load cmake armadillo boostprocess \
+femdk getfem libboard moab-debug muparser opennurbs yaml-cpp
