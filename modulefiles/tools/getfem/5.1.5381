@@ -26,3 +26,4 @@ if [info exists env(BASE_DIR) ] {
 
 prepend-path	LD_LIBRARY_PATH    "$BaseDir/packages/getfem/$getfemversion/lib"
 prepend-path    CPLUS_INCLUDE_PATH "$BaseDir/packages/getfem/$getfemversion/include"
+setenv          GETFEM_VERSION     "$getfemversion"
