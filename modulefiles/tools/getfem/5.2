@@ -16,7 +16,7 @@ proc ModulesHelp { } {
 module-whatis	"set environment for GetFEM++ library"
 
 # for Tcl script use only
-set	getfemversion      5.0.5224
+set	getfemversion      5.2
 
 if [info exists env(BASE_DIR) ] {
   set BaseDir $env(BASE_DIR)
@@ -24,6 +24,6 @@ if [info exists env(BASE_DIR) ] {
   set BaseDir "/mnt/space/install"
 }
 
-prepend-path	LD_LIBRARY_PATH    "$BaseDir/packages/getfem/5.0.5224/lib"
-prepend-path    CPLUS_INCLUDE_PATH "$BaseDir/packages/getfem/5.0.5224/include"
+prepend-path	LD_LIBRARY_PATH    "$BaseDir/packages/getfem/$getfemversion/lib"
+prepend-path    CPLUS_INCLUDE_PATH "$BaseDir/packages/getfem/$getfemversion/include"
 setenv          GETFEM_VERSION     "$getfemversion"

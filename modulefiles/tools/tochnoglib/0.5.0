@@ -7,6 +7,8 @@ proc ModulesHelp { } {
 	global tochnoglibversion
 
 	puts stderr "\tSets varialbes for TochnogLib library"
+        puts stderr "\tSets TochnogLib_DIR"
+        puts stderr "\tSets TochnogLib_VERSION"
         puts stderr "\n\tSets PATH"
 	puts stderr "\n\tSets LD_LIBRARY_PATH"
         puts stderr "\n\tSets CPUS_INCLUDE_PATH"
@@ -24,6 +26,8 @@ if [info exists env(BASE_DIR) ] {
   set BaseDir "/mnt/space/install"
 }
 
+setenv          TochnogLib_VERSION "$tochnoglibversion"
+setenv          TochnogLib_DIR     "$BaseDir/packages/tochnoglib/$tochnoglibversion/"
 prepend-path    PATH               "$BaseDir/packages/tochnoglib/0.5.0/bin"
 prepend-path    LD_LIBRARY_PATH    "$BaseDir/packages/tochnoglib/0.5.0/lib"
 prepend-path    CPLUS_INCLUDE_PATH "$BaseDir/packages/tochnoglib/0.5.0/include"
