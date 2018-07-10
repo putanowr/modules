@@ -1,0 +1,27 @@
+#%Module1.0#####################################################################
+##
+## MOAB mdoulefile
+##
+##
+proc ModulesHelp { } {
+	global moabversion
+
+	puts stderr "\tSets varialbes for MOAB library"
+	puts stderr "\n\tSets LD_LIBRARY_PATH"
+        puts stderr "\n\tSets CPUS_INCLUDE_PATH"
+	puts stderr "\n\tVersion $moabversion\n"
+}
+
+module-whatis	"set environment for MOAB library"
+
+# for Tcl script use only
+set	moabversion	5.0
+
+if [info exists env(BASE_DIR) ] {
+  set BaseDir $env(BASE_DIR)
+} else {
+  set BaseDir "/mnt/space/install"
+}
+
+prepend-path     LD_LIBRARY_PATH    "$BaseDir/packages/moab-debug/$moabversion/lib"
+prepend-path     CPLUS_INCLUDE_PATH "$BaseDir/packages/moab-debug/$moabversion/include"

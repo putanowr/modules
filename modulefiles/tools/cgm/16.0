@@ -1,0 +1,27 @@
+#%Module1.0#####################################################################
+##
+## CGM mdoulefile
+##
+##
+proc ModulesHelp { } {
+	global cgmversion
+
+	puts stderr "\tSets varialbes for CGM library"
+	puts stderr "\n\tSets LD_LIBRARY_PATH"
+        puts stderr "\n\tSets CPUS_INCLUDE_PATH"
+	puts stderr "\n\tVersion $cgmversion\n"
+}
+
+module-whatis	"enable use of CGM library"
+
+# for Tcl script use only
+set	cgmversion	16.0
+
+if [info exists env(BASE_DIR) ] {
+  set BaseDir $env(BASE_DIR)
+} else {
+  set BaseDir "/mnt/space/install"
+}
+
+prepend-path     LD_LIBRARY_PATH    "$BaseDir/packages/cgm/$cmgversion/lib"
+prepend-path     CPLUS_INCLUDE_PATH "$BaseDir/packages/cgm/$cgmversion/include"

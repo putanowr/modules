@@ -1,0 +1,31 @@
+#%Module1.0#####################################################################
+##
+## MeshKit modulefile
+##
+##
+proc ModulesHelp { } {
+	global meshkitversion
+
+	puts stderr "\tSets varialbes for MeshKit library"
+        puts stderr "\n\tSets PATH"
+	puts stderr "\n\tVersion $meshkitversion\n"
+}
+
+module-whatis	"set environment for MeshKit library"
+
+# for Tcl script use only
+set	meshkitversion      1.5
+
+if [info exists env(BASE_DIR) ] {
+  set BaseDir $env(BASE_DIR)
+} else {
+  set BaseDir "/mnt/space/install"
+}
+
+# local variable to shoten the paths
+set basepath "$BaseDir/packages/meshkit/$meshkitversion"
+
+prepend-path    PATH                "$basepath/bin"
+prepend-path    LD_LIBRARY_PATH     "$basepath/lib"
+prepend-path    CPLUS_INCLUDE_PATH  "$basepath/include"
+setenv          MESHKIT_VERSION     "$meshkitversion"

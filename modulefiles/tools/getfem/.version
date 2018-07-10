@@ -3,5 +3,5 @@
 if [info exists env(GETFEM_DEFAULT) ] {
   set ModulesVersion $env(GETFEM_DEFAULT)
 } else {
-  set ModulesVersion "5.0.5224"
+  set ModulesVersion "5.2"
 }

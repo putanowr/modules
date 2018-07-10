@@ -3,5 +3,5 @@
 if [info exists env(CGM_DEFAULT) ] {
   set ModulesVersion $env(CGM_DEFAULT)
 } else {
-  set ModulesVersion "15.0"
+  set ModulesVersion "16.0"
 }

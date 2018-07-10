@@ -3,5 +3,5 @@
 if [info exists env(MESHKIT_DEFAULT) ] {
   set ModulesVersion $env(MESHKIT_DEFAULT)
 } else {
-  set ModulesVersion "1.4"
+  set ModulesVersion "1.5"
 }
