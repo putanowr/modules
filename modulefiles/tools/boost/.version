@@ -1,0 +1,7 @@
+#%Module1.0
+
+if [info exists env(BOOST_DEFAULT) ] {
+  set ModulesVersion $env(BOOST_DEFAULT)
+} else {
+  set ModulesVersion "1.67.0"
+}
