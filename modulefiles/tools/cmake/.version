@@ -3,5 +3,5 @@
 if [info exists env(CMAKE_DEFAULT) ] {
   set ModulesVersion $env(CMAKE_DEFAULT)
 } else {
-  set ModulesVersion "3.10.3"
+  set ModulesVersion "3.12.0"
 }

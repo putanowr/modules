@@ -1,0 +1,29 @@
+#%Module1.0#####################################################################
+##
+## CMake modulefile
+##
+##
+proc ModulesHelp { } {
+	global cmakeversion
+
+	puts stderr "\tSets varialbes for CMake"
+  puts stderr "\n\tSets variable cmake_VERSION"
+  puts stderr "\n\tSets variable cmake_PATH"
+  puts stderr "\n\tSets PATH"
+	puts stderr "\n\tVersion $cmakeversion\n"
+}
+
+module-whatis	"set environment for CMake"
+
+# for Tcl script use only
+set	cmakeversion      3.12.0
+
+if [info exists env(BASE_DIR) ] {
+  set BaseDir $env(BASE_DIR)
+} else {
+  set BaseDir "/mnt/space/install"
+}
+
+setenv           cmake_VERSION     "$cmakeversion"
+setenv           cmake_DIR         "$BaseDir/packages/cmake/$cmakeversion/"
+prepend-path     PATH   "$BaseDir/packages/cmake/$cmakeversion/bin"
