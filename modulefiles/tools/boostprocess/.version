@@ -1,6 +1,6 @@
 #%Module1.0
 
-if [info exists env(BOOSPROCESS_DEFAULT) ] {
+if [info exists env(BOOSTPROCESS_DEFAULT) ] {
   set ModulesVersion $env(BOOSTPROCESS_DEFAULT)
 } else {
   set ModulesVersion "1.0.0"
