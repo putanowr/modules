@@ -1,0 +1,29 @@
+#%Module1.0#####################################################################
+##
+## CMB modulefile
+##
+##
+proc ModulesHelp { } {
+	global cmbversion
+
+	puts stderr "\tSets varialbes for CMB toolkit from Kitware"
+        puts stderr "\n\tSets PATH"
+	puts stderr "\n\tSets LD_LIBRARY_PATH"
+        puts stderr "\n\tSets CPUS_INCLUDE_PATH"
+	puts stderr "\n\tVersion $cmbversion\n"
+}
+
+module-whatis	"set environment for CMB toolkit"
+
+# for Tcl script use only
+set	cmbversion      1.0.0
+
+if [info exists env(BASE_DIR) ] {
+  set BaseDir $env(BASE_DIR)
+} else {
+  set BaseDir "/mnt/space/install"
+}
+
+setenv         CMB_DIR                 "$BaseDir/packages/cmb/1.0"
+prepend-path   LD_LIBRARY_PATH         "$BaseDir/packages/cmb/1.0/lib"
+prepend_path   PATH                    "$BaseDir/packages/cmb/1.0/bin"
