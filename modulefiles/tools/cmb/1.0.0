@@ -24,6 +24,6 @@ if [info exists env(BASE_DIR) ] {
   set BaseDir "/mnt/space/install"
 }
 
-setenv         CMB_DIR                 "$BaseDir/packages/cmb/1.0"
-prepend-path   LD_LIBRARY_PATH         "$BaseDir/packages/cmb/1.0/lib"
-prepend_path   PATH                    "$BaseDir/packages/cmb/1.0/bin"
+setenv         CMB_DIR                 "$BaseDir/packages/cmb/$cmbversion"
+prepend-path   LD_LIBRARY_PATH         "$BaseDir/packages/cmb/$cmbversion/lib"
+prepend_path   PATH                    "$BaseDir/packages/cmb/$cmbversion/bin"
