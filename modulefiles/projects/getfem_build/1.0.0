@@ -1,0 +1,19 @@
+#%Module1.0
+#####################################################################
+##
+## Module for building GetFEM 
+##
+##
+proc ModulesHelp { } {
+	global getfembuildversion
+
+	puts stderr "\tLoads modules for building GetFEM"
+	puts stderr "\n\tVersion $getfembuildversion\n"
+}
+
+module-whatis	"load modules for building GetFEM"
+
+# for Tcl script use only
+set	getfembuildversion	1.0.0
+
+module load boost cmake muparser
