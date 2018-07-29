@@ -27,4 +27,4 @@ if [info exists env(BASE_DIR) ] {
 prepend-path	LD_LIBRARY_PATH    "$BaseDir/packages/boost/$boostversion/lib"
 prepend-path    CPLUS_INCLUDE_PATH "$BaseDir/packages/boost/$boostversion/include"
 setenv          BOOST_VERSION      "$boostversion"
-setenv          BOOST_DIR          "$BaseDir/packages/boost/$booostversion"
+setenv          BOOST_DIR          "$BaseDir/packages/boost/$boostversion"
