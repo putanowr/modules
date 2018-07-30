@@ -1,0 +1,7 @@
+#%Module1.0
+
+if [info exists env(APPIMAGE_DEFAULT) ] {
+  set ModulesVersion $env(APPIMAGE_DEFAULT)
+} else {
+  set ModulesVersion "1.0.0"
+}

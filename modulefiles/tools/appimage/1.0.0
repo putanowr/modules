@@ -1,0 +1,29 @@
+#%Module1.0#####################################################################
+##
+## AppImage modulefile
+##
+##
+proc ModulesHelp { } {
+	global appimageversion
+
+	puts stderr "\tSets varialbes for AppImage"
+  puts stderr "\n\tSets variable appimage_VERSION"
+  puts stderr "\n\tSets variable appimage_PATH"
+  puts stderr "\n\tSets PATH"
+	puts stderr "\n\tVersion $appimageversion\n"
+}
+
+module-whatis	"set environment for AppImage"
+
+# for Tcl script use only
+set	appimageversion      1.0.0
+
+if [info exists env(BASE_DIR) ] {
+  set BaseDir $env(BASE_DIR)
+} else {
+  set BaseDir "/mnt/space/install"
+}
+
+setenv           appimage_VERSION     "$appimageversion"
+setenv           appimage_DIR         "$BaseDir/packages/appimage/$appimageversion/"
+prepend-path     PATH   "$BaseDir/packages/appimage/$appimageversion/bin"
