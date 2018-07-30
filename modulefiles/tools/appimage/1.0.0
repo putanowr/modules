@@ -7,9 +7,11 @@ proc ModulesHelp { } {
 	global appimageversion
 
 	puts stderr "\tSets varialbes for AppImage"
-  puts stderr "\n\tSets variable appimage_VERSION"
-  puts stderr "\n\tSets variable appimage_PATH"
-  puts stderr "\n\tSets PATH"
+        puts stderr "\n\tSets variable appimage_VERSION"
+        puts stderr "\n\tSets variable appimage_PATH"
+        puts stderr "\n\tSets PATH"
+	puts stderr "\n\tSets LD_LIBRARY_PATH"
+        puts stderr "\n\tSets CPUS_INCLUDE_PATH"
 	puts stderr "\n\tVersion $appimageversion\n"
 }
 
@@ -24,6 +26,8 @@ if [info exists env(BASE_DIR) ] {
   set BaseDir "/mnt/space/install"
 }
 
-setenv           appimage_VERSION     "$appimageversion"
-setenv           appimage_DIR         "$BaseDir/packages/appimage/$appimageversion/"
-prepend-path     PATH   "$BaseDir/packages/appimage/$appimageversion/bin"
+setenv          appimage_VERSION   "$appimageversion"
+setenv          appimage_DIR       "$BaseDir/packages/appimage/$appimageversion/"
+prepend-path    PATH               "$BaseDir/packages/appimage/$appimageversion/bin"
+prepend-path	LD_LIBRARY_PATH    "$BaseDir/packages/appimage/$appimageversion/lib"
+prepend-path    CPLUS_INCLUDE_PATH "$BaseDir/packages/appimage/$appimageversion/include"
