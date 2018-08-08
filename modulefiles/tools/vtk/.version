@@ -1,7 +1,7 @@
 #%Module1.0
 
-if [info exists env(GETFEM_DEFAULT) ] {
-  set ModulesVersion $env(GETFEM_DEFAULT)
+if [info exists env(VTK_DEFAULT) ] {
+  set ModulesVersion $env(VTK_DEFAULT)
 } else {
   set ModulesVersion "8.1.1"
 }
