@@ -1,0 +1,32 @@
+#%Module1.0#####################################################################
+##
+## VTK modulefile
+##
+##
+proc ModulesHelp { } {
+	global vtkversion
+
+	puts stderr "\tSets varialbes for VTK library"
+        puts stderr "\n\tSets PATH"
+	puts stderr "\n\tSets LD_LIBRARY_PATH"
+        puts stderr "\n\tSets CPUS_INCLUDE_PATH"
+	puts stderr "\n\tVersion $vtkversion\n"
+}
+
+module-whatis	"set environment for VTK library"
+
+# for Tcl script use only
+set	vtkversion      8.1.1
+
+if [info exists env(BASE_DIR) ] {
+  set BaseDir $env(BASE_DIR)
+} else {
+  set BaseDir "/mnt/space/install"
+}
+
+prepend-path	LD_LIBRARY_PATH    "$BaseDir/packages/vtk/$vtkversion/lib"
+prepend-path    CPLUS_INCLUDE_PATH "$BaseDir/packages/vtk/$vtkversion/include"
+setenv          VTK_VERSION        "$vtkversion"
+prepend-path    CMAKE_INCLUDE_PATH "$BaseDir/packages/vtk/$vtkversion/include"
+prepend-path    CMAKE_LIBRARY_PATH "$BaseDir/packages/vtk/$vtkversion/lib"
+prepend-path    CMAKE_PREFIX_PATH  "$BaseDir/packages/vtk/$vtkversion"
