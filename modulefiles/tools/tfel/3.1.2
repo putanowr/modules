@@ -1,0 +1,31 @@
+#%Module1.0#####################################################################
+##
+## tfel modulefile
+##
+##
+proc ModulesHelp { } {
+	global getfemversion
+
+	puts stderr "\tSets varialbes for tfel library and mfront generator""
+        puts stderr "\n\tSets PATH"
+	puts stderr "\n\tSets LD_LIBRARY_PATH"
+        puts stderr "\n\tSets CPUS_INCLUDE_PATH"
+        puts stderr "\n\tSets TFEL_VERSION"
+	puts stderr "\n\tVersion $tfelversion\n"
+}
+
+module-whatis	"set environment for TFEL library and mfront generator"
+
+# for Tcl script use only
+set	tfelversion      3.1.2
+
+if [info exists env(BASE_DIR) ] {
+  set BaseDir $env(BASE_DIR)
+} else {
+  set BaseDir "/mnt/space/install"
+}
+
+prepend-path	LD_LIBRARY_PATH    "$BaseDir/packages/tfel/$tfelversion/lib"
+prepend-path    CPLUS_INCLUDE_PATH "$BaseDir/packages/tfel/$tfelversion/include"
+prepend-path    PATH               "$BaseDir/packages/tfel/$tfelversion/bin"
+setenv          TFEL_VERSION       "$tfelversion"
