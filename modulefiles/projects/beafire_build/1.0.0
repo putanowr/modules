@@ -17,3 +17,12 @@ module-whatis	"load modules for building Beafire"
 set	beafirebuildversion	1.0.0
 
 module load cmake armadillo qwt cereal tochnoglib kdreports kdchart getfem boost muparser vtk
+
+if [info exists env(BASE_DIR) ] {
+  set BaseDir $env(BASE_DIR)
+} else {
+  set BaseDir "/mnt/space/install"
+}
+
+setenv   BEAFIRE_ROOT  "$BaseDir/packages/beafire/$beafirebuildversion"
+prepend-path     PATH  "$BaseDir/packages/beafire/$beafirebuildversion/bin"
