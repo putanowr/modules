@@ -1,0 +1,29 @@
+#%Module1.0#####################################################################
+##
+## FEAP modulefile
+##
+##
+proc ModulesHelp { } {
+	global feapversion
+
+	puts stderr "\tSets varialbes for FEAP"
+  puts stderr "\n\tSets variable FEAP_VERSION"
+  puts stderr "\n\tSets variable FEAP_PATH"
+  puts stderr "\n\tSets PATH"
+	puts stderr "\n\tVersion $feapversion\n"
+}
+
+module-whatis	"set environment for FEAP"
+
+# for Tcl script use only
+set	feapversion      7.4
+
+if [info exists env(BASE_DIR) ] {
+  set BaseDir $env(BASE_DIR)
+} else {
+  set BaseDir "/mnt/space/install"
+}
+
+setenv           FEAP_VERSION     "$feapversion"
+setenv           FEAP_DIR         "$BaseDir/packages/feap/$feapversion/"
+prepend-path     PATH   "$BaseDir/packages/feap/$feapversion/bin"
