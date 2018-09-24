@@ -1,0 +1,29 @@
+#%Module1.0#####################################################################
+##
+## HYPLAS modulefile
+##
+##
+proc ModulesHelp { } {
+	global hyplasversion
+
+	puts stderr "\tSets varialbes for HYPLAS"
+  puts stderr "\n\tSets variable HYPLAS_VERSION"
+  puts stderr "\n\tSets variable HYPLAS_PATH"
+  puts stderr "\n\tSets PATH"
+	puts stderr "\n\tVersion $hyplasversion\n"
+}
+
+module-whatis	"Set environment for HYPLAS"
+
+# for Tcl script use only
+set	hyplasversion      2.0
+
+if [info exists env(BASE_DIR) ] {
+  set BaseDir $env(BASE_DIR)
+} else {
+  set BaseDir "/mnt/space/install"
+}
+
+setenv           HYPLAS_VERSION     "$hyplasversion"
+setenv           HYPLAS_DIR         "$BaseDir/packages/hyplas/$hyplasversion/"
+prepend-path     PATH   "$BaseDir/packages/hyplas/$hyplasversion/bin"
