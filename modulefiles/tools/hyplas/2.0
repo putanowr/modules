@@ -24,6 +24,8 @@ if [info exists env(BASE_DIR) ] {
   set BaseDir "/mnt/space/install"
 }
 
+
+setenv           HYPLASHOME         "$BaseDir/packages/hyplas/$hyplasversion/"
 setenv           HYPLAS_VERSION     "$hyplasversion"
 setenv           HYPLAS_DIR         "$BaseDir/packages/hyplas/$hyplasversion/"
 prepend-path     PATH   "$BaseDir/packages/hyplas/$hyplasversion/bin"
