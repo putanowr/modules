@@ -1,0 +1,7 @@
+#%Module1.0
+
+if [info exists env(GETFEM_DEBUG_DEFAULT) ] {
+  set ModulesVersion $env(GETFEM_DEBUG_DEFAULT)
+} else {
+  set ModulesVersion "5.3"
+}
