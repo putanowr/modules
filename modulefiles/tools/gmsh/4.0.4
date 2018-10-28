@@ -1,0 +1,29 @@
+#%Module1.0#####################################################################
+##
+## Gmsh modulefile
+##
+##
+proc ModulesHelp { } {
+	global gmshversion
+
+	puts stderr "\tSets varialbes for gmsh"
+  puts stderr "\n\tSets variable gmsh_VERSION"
+  puts stderr "\n\tSets variable gmsh_DIR"
+  puts stderr "\n\tSets PATH"
+	puts stderr "\n\tVersion $gmshversion\n"
+}
+
+module-whatis	"set environment for gmsh"
+
+# for Tcl script use only
+set	gmhsversion      4.0.4
+
+if [info exists env(BASE_DIR) ] {
+  set BaseDir $env(BASE_DIR)
+} else {
+  set BaseDir "/mnt/space/install"
+}
+
+setenv           gmsh_VERSION     "$gmshversion"
+setenv           ghms_DIR         "$BaseDir/packages/gmsh/$gmshversion/"
+prepend-path     PATH   "$BaseDir/packages/gmsh/$gmshversion/bin"
