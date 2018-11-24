@@ -1,0 +1,19 @@
+#%Module1.0
+#####################################################################
+##
+## Module for building simple_hyperelastic project 
+##
+##
+proc ModulesHelp { } {
+	global sofembuildversion
+
+	puts stderr "\tLoads modules for building simple_hyperelastic"
+	puts stderr "\n\tVersion $sofembuildversion\n"
+}
+
+module-whatis	"load modules for building simple_hyperelastic project in debug mode"
+
+# for Tcl script use only
+set	sofembuildversion	1.0.0
+
+module load cmake armadillo getfem-debug muparser boost vtk
