@@ -3,5 +3,5 @@
 if [info exists env(FEAP_DEFAULT) ] {
   set ModulesVersion $env(FEAP_DEFAULT)
 } else {
-  set ModulesVersion "8.2"
+  set ModulesVersion "8.5"
 }
