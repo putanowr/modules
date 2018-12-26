@@ -1,0 +1,26 @@
+#%Module1.0#####################################################################
+##
+## Catch2 modulefile
+##
+##
+proc ModulesHelp { } {
+	global catch2version
+
+	puts stderr "\tSets varialbes for Catch2 library"
+  puts stderr "\tSets CMAKE_PREFIX_PATH"
+	puts stderr "\n\tVersion $catch2version\n"
+}
+
+module-whatis	"set environment for Catch2 library"
+
+# for Tcl script use only
+set	catch2version      2.5.0
+
+if [info exists env(BASE_DIR) ] {
+  set BaseDir $env(BASE_DIR)
+} else {
+  set BaseDir "/mnt/space/install"
+}
+
+setenv          Catch2_VERSION     "$catch2version"
+prepend-path    CMAKE_PREFIX_PATH  "$BaseDir/packages/catch2/$catch2version/lib/cmake/Catch2"
