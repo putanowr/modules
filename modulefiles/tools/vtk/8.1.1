@@ -7,9 +7,12 @@ proc ModulesHelp { } {
 	global vtkversion
 
 	puts stderr "\tSets varialbes for VTK library"
-        puts stderr "\n\tSets PATH"
+  puts stderr "\n\tSets PATH"
 	puts stderr "\n\tSets LD_LIBRARY_PATH"
-        puts stderr "\n\tSets CPUS_INCLUDE_PATH"
+	puts stderr "\n\tSets CMAKE_LIBRARY_PATH"
+	puts stderr "\n\tSets CMAKE_INCLUDE_PATH"
+	puts stderr "\n\tSets CMAKE_PREFIX_PATH"
+  puts stderr "\n\tSets CLPUS_INCLUDE_PATH"
 	puts stderr "\n\tVersion $vtkversion\n"
 }
 
