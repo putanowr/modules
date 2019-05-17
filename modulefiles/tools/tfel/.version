@@ -3,5 +3,5 @@
 if [info exists env(TFEL_DEFAULT) ] {
   set ModulesVersion $env(TFEL_DEFAULT)
 } else {
-  set ModulesVersion "3.1.2"
+  set ModulesVersion "3.2.1"
 }
