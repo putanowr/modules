@@ -17,3 +17,4 @@ module-whatis	"load modules for building FEMDK"
 set	femdkbuildversion	1.0.0
 
 module load cmake armadillo arabica tochnoglib boost getfem libboard moab muparser teng vtk
+module load opencascade
