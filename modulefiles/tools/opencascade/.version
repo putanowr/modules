@@ -1,0 +1,7 @@
+#%Module1.0
+
+if [info exists env(OPENCASCADE_DEFAULT) ] {
+  set ModulesVersion $env(OPENCASCADE_DEFAULT)
+} else {
+  set ModulesVersion "7.3.0"
+}

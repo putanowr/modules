@@ -1,0 +1,22 @@
+#%Module1.0#####################################################################
+##
+## OpenCASCADE modulefile
+##
+##
+proc ModulesHelp { } {
+	global opennurbsversion
+
+	puts stderr "\tSets varialbes for OpenCASCADE library"
+        puts stderr "\n\tSets PATH"
+	puts stderr "\n\tSets LD_LIBRARY_PATH"
+        puts stderr "\n\tSets CPUS_INCLUDE_PATH"
+	puts stderr "\n\tVersion $opencascadeversion\n"
+}
+
+module-whatis	"set environment for OpenCASCADE library"
+
+# for Tcl script use only
+set	opencascadeversion      5.0.0
+
+prepend-path     CPLUS_INCLUDE_PATH "/usr/include/opencascade"
+#prepend-path     LD_LIBRARY_PATH    "/usr/include/opencascade"
