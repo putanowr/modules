@@ -1,0 +1,32 @@
+#%Module1.0#####################################################################
+##
+## Elmer modulefile
+##
+##
+proc ModulesHelp { } {
+  global elmerversion
+
+  puts stderr "\tSets varialbes for Elmer"
+  puts stderr "\n\tSets variables ELMER_VERSION ELMER_DIR ELMER_HOME ELMER_LIB"
+  puts stderr "\n\tSets PATH"
+  puts stderr "\n\tVersion $elmerversion\n"
+}
+
+module-whatis	"set environment for Elmer"
+
+# for Tcl script use only
+set	elmerversion      9.0
+
+if [info exists env(BASE_DIR) ] {
+  set BaseDir $env(BASE_DIR)
+} else {
+  set BaseDir "/mnt/space/install"
+}
+
+set ElmerDir "$BaseDir/packages/elmer"
+setenv           ELMER_VERSION     "$elmerversion"
+setenv           ELMER_DIR         "$ElmerDir"
+setenv           ELMER_HOME        "$ElmerDir"
+setenv           ELMER_LIB         "$ElmerDir/lib"
+prepend-path     PATH              "$ElmerDir/bin"
+prepend-path     LD_LIBRARY_PATH   "$ElmerDir/lib:$ElmerDir/share/elmersolver/lib"

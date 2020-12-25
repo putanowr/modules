@@ -1,0 +1,7 @@
+#%Module1.0
+
+if [info exists env(ELMER_DEFAULT) ] {
+  set ModulesVersion $env(ELMER_DEFAULT)
+} else {
+  set ModulesVersion "9.0"
+}
