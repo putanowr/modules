@@ -1,0 +1,19 @@
+#%Module1.0
+#####################################################################
+##
+## Module for building AHIGA
+##
+##
+proc ModulesHelp { } {
+	global igabuildversion
+
+	puts stderr "\tLoads modules for building AHIGA"
+	puts stderr "\n\tVersion $ahigaversion\n"
+}
+
+module-whatis	"load modules for building AHIGA"
+
+# for Tcl script use only
+set	ahigabuildversion	1.0.0
+
+module load femdk femdk_build opennurbs

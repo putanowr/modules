@@ -25,3 +25,5 @@ if [info exists env(BASE_DIR) ] {
 
 prepend-path     LD_LIBRARY_PATH    "$BaseDir/packages/moab/$moabversion/lib"
 prepend-path     CPLUS_INCLUDE_PATH "$BaseDir/packages/moab/$moabversion/include"
+
+module load hdf5
